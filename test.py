@@ -1,16 +1,42 @@
-rectangles = [[1,0,2,3],[1,0,3,1]]
+n = int(input())
 
-# plane = [[0]*pow(10,9)]*pow(10,9) [0,0,2,2],
+m = int(input())
 
-plane = [[0]*4]*4
 
-for x0, y0, x1, y1 in rectangles:
-    
-    for i in range(x0, x1+1):
-        for j in range(y0, y1+1):
-            
-            print(i, j)
-            plane[i][j] = 1
-    break
+def q1(b):
+    return [1]*len(b)
+def q2(b):
+    for i in range(1, len(b)+1, 2):
+        b[i] = 0
+    return b
+def q3(b):
+    for i in range(0, len(b)+1, 2):
+        b[i] = 0
+    return b
+def q4(b):
+    return [0]*len(b)
 
-print(plane)
+
+buckets = [0]*n
+
+
+
+for query in range(m):
+
+    q = int(input())
+
+    if q == 1:
+        q1(buckets)
+    elif q == 2:
+        q1(buckets)
+    elif q == 3:
+        q1(buckets)
+    elif q == 4:
+        q1(buckets)
+
+count = 0
+
+for i in buckets:
+    if i > 0:count += 1
+
+return count
